@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SonicHatch - Pro Home Studio Recording & Mixing on a Budget</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FFFFFF;
+      color: #0F172A;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: #7C3AED; text-decoration: none; }
+    a:hover, a:focus { text-decoration: underline; }
+
+    /* Utility */
+    .container {
+      width: 90%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    .text-center { text-align: center; }
+    .hidden { display: none; }
+
+    /* Gradient and palette elements */
+    .mesh-gradient {
+      background: linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #F97316 100%);
+      color: white;
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      color: #0F172A;
+    }
+    h1 {
+      font-size: 2.75rem;
+      line-height: 1.1;
+      margin-bottom: 0.4em;
+    }
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1em;
+      color: #7C3AED;
+    }
+    h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.6em;
+      color: #EC4899;
+    }
+
+    p { margin-bottom: 1rem; color: #334155; }
+
+    /* Header */
+    header {
+      background: white;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    nav .logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #7C3AED;
+      letter-spacing: 0.03em;
+    }
+    nav a.nav-link {
+      color: #334155;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+    }
+    nav a.nav-link:hover {
+      color: #7C3AED;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #F97316 100%);
+      color: white;
+      padding: 6rem 1.5rem 4rem 1.5rem;
+      text-align: center;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      max-width: 700px;
+      margin: 0 auto 0.6rem auto;
+      line-height: 1.1;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      color: #FCE7F3;
+    }
+    .hero button {
+      background-color: #FFFFFF;
+      color: #7C3AED;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 12px;
+      padding: 0.75rem 2.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(124,58,237,0.4);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .hero button:hover, .hero button:focus {
+      background-color: #C4B5FD;
+      color: #FFFFFF;
+      outline: none;
+    }
+
+    /* Section Spacing */
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid #E2E8F0;
+    }
+
+    /* How It Works Section */
+    .how-it-works {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .how-it-works h2 {
+      margin-bottom: 2rem;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .step {
+      background: #F8FAFC;
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .step h3 {
+      color: #7C3AED;
+      margin-bottom: 0.75rem;
+    }
+    .step p {
+      color: #475569;
+      font-size: 1rem;
+    }
+
+    /* Pricing Section */
+    .pricing {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pricing h2 {
+      margin-bottom: 2rem;
+    }
+    .pricing-table {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+    .price-card {
+      border-radius: 12px;
+      background: #F8FAFC;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease;
+    }
+    .price-card:hover {
+      box-shadow: 0 10px 30px rgba(124,58,237,0.3);
+    }
+    .price-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #EC4899;
+    }
+    .price-card .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #7C3AED;
+      margin: 1rem 0 1.5rem 0;
+    }
+    .price-card ul {
+      text-align: left;
+      margin-bottom: 2rem;
+      color: #475569;
+      list-style: disc inside;
+      font-size: 1rem;
+    }
+
+    /* Lead Capture Form */
+    form {
+      max-width: 420px;
+      margin: 0 auto;
+      background: #F8FAFC;
+      padding: 2rem 1.75rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      font-size: 1rem;
+      color: #334155;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.55rem 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1.5px solid #CBD5E1;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, select:focus {
+      border-color: #7C3AED;
+      outline: none;
+      box-shadow: 0 0 6px rgba(124,58,237,0.5);
+    }
+    button.submit-btn {
+      background-color: #7C3AED;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.75rem 0;
+      border: none;
+      width: 100%;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(124,58,237,0.5);
+      transition: background-color 0.3s ease;
+    }
+    button.submit-btn:hover, button.submit-btn:focus {
+      background-color: #9D7CED;
+      outline: none;
+    }
+
+    .form-message {
+      text-align: center;
+      font-weight: 600;
+      margin-top: 1rem;
+      color: #16A34A; /* success green */
+    }
+    .form-error {
+      color: #DC2626; /* red error */
+      font-weight: 600;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      background: #0F172A;
+      padding: 2rem 0;
+      color: #94A3B8;
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 3rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .pricing-table {
+        grid-template-columns: 1fr;
+      }
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">SonicHatch</div>
+      <div>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#contact" class="nav-link">Book Your Spot</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Professional Home Studio Recording & Mixing on a Budget</h1>
+    <p>The bridge between DIY bedroom recordings and overpriced commercial studios.</p>
+    <button onclick="document.getElementById('booking-form').scrollIntoView({behavior: 'smooth'});">Book Your Spot</button>
+  </section>
+
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <h2>How SonicHatch Works</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>For Musicians</h3>
+          <p>Choose the service tier that fits your needs and budget, then book a session in a vetted, professional home studio near you.</p>
+          <p>Record your vocals or instruments with high-end gear and acoustic treatment, unlocking studio-quality sound without the commercial price.</p>
+          <p>Receive pro mixes and masters tailored to your music style, delivered digitally afterward.</p>
+        </div>
+        <div class="step">
+          <h3>For Studio Owners</h3>
+          <p>Apply to join the SonicHatch network as a vetted host offering your home studio for professional sessions.</p>
+          <p>Benefit from guaranteed bookings and fair payouts while showcasing your studio’s unique vibe and equipment.</p>
+          <p>Help shape the SonicHatch standard and participate in marketing to grow the community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>Service Packages & Pricing</h2>
+      <div class="pricing-table">
+        <div class="price-card">
+          <h3>The Vocal Pass</h3>
+          <div class="price">$149</div>
+          <ul>
+            <li>2-hour recording session</li>
+            <li>Raw high-quality stems delivery</li>
+          </ul>
+          <div>Ideal for singer-songwriters and podcasters.</div>
+        </div>
+        <div class="price-card">
+          <h3>The Single Special</h3>
+          <div class="price">$499</div>
+          <ul>
+            <li>4-hour session</li>
+            <li>Professional mix & master included</li>
+          </ul>
+          <div>Perfect for emerging artists and rappers.</div>
+        </div>
+        <div class="price-card">
+          <h3>The EP Accelerator</h3>
+          <div class="price">$1,800</div>
+          <ul>
+            <li>20-hour block of studio time</li>
+            <li>Full project mix and mastering</li>
+          </ul>
+          <div>Designed for professional indie artists.</div>
+        </div>
+        <div class="price-card">
+          <h3>Mix-Only (Remote)</h3>
+          <div class="price">$299 / track</div>
+          <ul>
+            <li>Professional mix of your stems</li>
+            <li>Delivered remotely</li>
+          </ul>
+          <div>Ideal for global bedroom producers.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact container">
+    <h2 class="text-center">Book Your Spot</h2>
+    <form id="booking-form" action="https://app.baget.ai/api/public/databases/d0bc9cb7-08e3-4b7c-843d-799db0e2783f/rows" method="POST">
+      <input type="hidden" name="_method" value="POST" />
+      <label for="musician_name">Your Name</label>
+      <input id="musician_name" name="data[musician_name]" type="text" placeholder="John Doe" required />
+
+      <label for="email">Email</label>
+      <input id="email" name="data[email]" type="email" placeholder="john@example.com" required />
+
+      <label for="genre">Genre</label>
+      <select id="genre" name="data[genre]" required>
+        <option value="">Select genre</option>
+        <option>Pop</option>
+        <option>Hip-hop / Rap</option>
+        <option>Rock</option>
+        <option>R&B / Soul</option>
+        <option>Country</option>
+        <option>Electronic</option>
+        <option>Jazz</option>
+        <option>Other</option>
+      </select>
+
+      <label for="project_type">Project Type</label>
+      <select id="project_type" name="data[project_type]" required>
+        <option value="">Select type</option>
+        <option>Vocal Recording</option>
+        <option>Mixing & Mastering</option>
+        <option>Full Recording Session</option>
+        <option>Other</option>
+      </select>
+
+      <label for="budget">Budget</label>
+      <select id="budget" name="data[budget]" required>
+        <option value="">Select budget</option>
+        <option>$100 - $200</option>
+        <option>$201 - $500</option>
+        <option>$501 - $1,800</option>
+        <option>$1,800+</option>
+      </select>
+
+      <button type="submit" class="submit-btn">Submit</button>
+
+      <p class="form-message hidden" id="success-message">Thanks — we'll be in touch!</p>
+      <p class="form-error hidden" id="error-message">Oops, something went wrong. Please try again.</p>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2026 SonicHatch. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById('booking-form');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      errorMessage.classList.add('hidden');
+      successMessage.classList.add('hidden');
+
+      const formData = new FormData(form);
+      // Convert form data to JSON structure for API
+      const data = {};
+      formData.forEach((value, key) => {
+        // data keys come as "data[field]", we need to extract field
+        const match = key.match(/^data\[(.+)\]$/);
+        if (match) {
+          data[match[1]] = value;
+        }
+      });
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ data })
+        });
+
+        if (response.ok) {
+          successMessage.classList.remove('hidden');
+          form.reset();
+        } else {
+          throw new Error('API error');
+        }
+      } catch (error) {
+        errorMessage.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
