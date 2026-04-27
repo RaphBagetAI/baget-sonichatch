@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SonicHatch - Pro Home Studio Recording & Mixing on a Budget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        /* Reset & base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #FFFFFF;
+            color: #0F172A;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        a {
+            color: #7C3AED;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #EC4899;
+        }
+
+        header {
+            padding: 20px 24px;
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            background: linear-gradient(90deg, #7C3AED, #EC4899, #F97316);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            user-select: none;
+        }
+
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 24px 48px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 2.75rem;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, #7C3AED, #EC4899, #F97316);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        p.lead {
+            font-weight: 500;
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+            color: #334155;
+        }
+
+        form {
+            background: rgba(255 255 255 / 0.8);
+            backdrop-filter: blur(24px);
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            padding: 24px 32px;
+            max-width: 480px;
+            margin: 0 auto 48px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #0F172A;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 1rem;
+            border-radius: 12px;
+            border: 1px solid #CBD5E1;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            border-color: #7C3AED;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            background: linear-gradient(90deg, #7C3AED, #EC4899, #F97316);
+            border: none;
+            color: white;
+            padding: 14px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #EC4899, #F97316, #7C3AED);
+        }
+
+        .thank-you-message {
+            text-align: center;
+            color: #16A34A;
+            font-weight: 600;
+            font-size: 1.125rem;
+            margin-top: 20px;
+        }
+
+        section.features {
+            margin: 40px 24px 80px;
+            max-width: 960px;
+            text-align: left;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: #F8FAFC;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .feature-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #7C3AED;
+        }
+
+        .feature-card p {
+            font-weight: 500;
+            color: #475569;
+        }
+
+        footer {
+            max-width: 960px;
+            margin: 0 auto 40px;
+            padding: 24px;
+            border-top: 1px solid #CBD5E1;
+            font-size: 0.875rem;
+            color: #94A3B8;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SonicHatch</div>
+        <nav aria-label="Primary navigation">
+            <a href="#services">Services</a>
+            <a href="#book">Book Now</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Professional Home Studio Recording & Mixing on a Budget</h1>
+        <p class="lead">Get world-class audio quality without the commercial studio price. Vetted local home studios with pro gear and treated rooms—perfect for your next project.</p>
+
+        <form id="waitlist-form" action="https://app.baget.ai/api/public/databases/d0bc9cb7-08e3-4b7c-843d-799db0e2783f/rows" method="POST">
+            <input type="hidden" name="externalKey" />
+            <label for="musician_name">Your Name</label>
+            <input type="text" id="musician_name" name="musician_name" required placeholder="Enter your full name" />
+
+            <label for="genre">Music Genre</label>
+            <input type="text" id="genre" name="genre" required placeholder="e.g. Indie, Hip-hop, Pop" />
+
+            <label for="project_type">Project Type</label>
+            <select id="project_type" name="project_type" required>
+                <option value="">Select a project type</option>
+                <option value="Recording Session">Recording Session</option>
+                <option value="Mixing & Mastering">Mixing & Mastering</option>
+                <option value="Both">Both</option>
+            </select>
+
+            <label for="budget">Your Budget (USD)</label>
+            <input type="text" id="budget" name="budget" required inputmode="numeric" pattern="[0-9]+" placeholder="e.g. 500" />
+
+            <label for="status">Status</label>
+            <select id="status" name="status" required>
+                <option value="">Select status</option>
+                <option value="Interested">Interested</option>
+                <option value="Contacted">Contacted</option>
+                <option value="Booked">Booked</option>
+            </select>
+
+            <button type="submit">Join Waitlist / Book</button>
+            <p class="thank-you-message" id="thank-you-message" style="display:none;">Thanks — we'll be in touch soon!</p>
+            <p class="error-message" id="error-message" style="display:none;color:#DC2626;font-weight:600;">Error submitting form. Please try again.</p>
+        </form>
+
+        <section class="features" id="services">
+            <div class="feature-card">
+                <h3>The Vocal Pass</h3>
+                <p>2-hour recording session + raw high-quality stems. Perfect for singer-songwriters and podcasters. $149</p>
+            </div>
+            <div class="feature-card">
+                <h3>The Single Special</h3>
+                <p>4-hour session + professional mix & master. Ideal for emerging artists and rappers. $499</p>
+            </div>
+            <div class="feature-card">
+                <h3>The EP Accelerator</h3>
+                <p>20-hour block + full project mix/mastering. Designed for professional indie artists. $1,800</p>
+            </div>
+            <div class="feature-card">
+                <h3>Mix-Only (Remote)</h3>
+                <p>Professional mix of user-provided stems. For global bedroom producers. $299 per track</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>Contact us at <a href="mailto:hello@sonichatch.com">hello@sonichatch.com</a></p>
+        <p>© 2026 SonicHatch. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('waitlist-form');
+        const thankYou = document.getElementById('thank-you-message');
+        const errorMsg = document.getElementById('error-message');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            thankYou.style.display = 'none';
+            errorMsg.style.display = 'none';
+
+            // Prepare JSON data
+            const data = {
+                data: {
+                    musician_name: form.musician_name.value.trim(),
+                    genre: form.genre.value.trim(),
+                    project_type: form.project_type.value,
+                    budget: parseInt(form.budget.value, 10),
+                    status: form.status.value
+                }
+            };
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    thankYou.style.display = 'block';
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            } catch (error) {
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
